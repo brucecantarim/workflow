@@ -1,21 +1,41 @@
 <?php
 
-// File types array
-$files => [
-        "IMG" => ["name" => "IMG"], ["type" => ["*.jpg", "*.jpeg", "*.png", "*.raw"]], 
-        "VIDS" => ["name" => "VID"], ["type" => ["*.mov", "*.mpg", "*.mpeg", "*.avi", "*.wmv"]], 
-        "PDF" => ["name" => "PDF"], ["type" => ["*.pdf"]], 
-        "DOCS" => ["name" => "DOCS"], ["type" => ["*.txt", "*.doc", "*.docx", "*.odt"]]
-        ];
+// Filetypes arrays
+
+$img = array(
+            "name" => "IMG", 
+            "extensions" => ["*.jpg", "*.jpeg", "*.png", "*.raw"]
+            ); 
+$vids = array(
+            "name" => "VID", 
+            "extensions" => ["*.mov", "*.mpg", "*.mpeg", "*.avi", "*.wmv"]
+            );
+$pdf = array(
+            "name" => "PDF", 
+            "extensions" => ["*.pdf"]
+            ); 
+$docs = array(
+            "name" => "DOCS", 
+            "extensions" => ["*.txt", "*.doc", "*.docx", "*.odt"]
+            );
 
 // Example project array for reference
 $example = array(
-    "name" => "Example", 
+    "name" => "Example",
+    "description" => "This is an example section. Change this text to describe it.",
     "dir" => "example", 
-    "itens" => ["Item A", "Item B", "Item C"]
+    "itens" => ["Item A", "Item B", "Item C"],
+    "filetypes" => [$img, $docs]
+);
+
+$example2 = array(
+    "name" => "Example 2", 
+    "dir" => "example2", 
+    "itens" => ["Item A", "Item B", "Item C"],
+    "filetypes" => [$img, $vids]
 );
 
 // List of all arrays (Will become a function later)
-$topics = array($example);
+$topics = array($example, $example2);
 
 ?>

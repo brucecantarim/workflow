@@ -26,6 +26,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" type="text/css">
 </head>
+<style>
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+</style>
 <body>
 <?php include("config.php"); ?>
 <?php include("functions.php"); ?>
@@ -34,15 +40,23 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center bg-primary">
             <?php
-            // App title
-            print "<h1 class='text-primary animated bounceIn' style='color:white;'>WORKFLOW <i class='glyphicon glyphicon-ok'></i></h1><br/>";
+            // App Title
+            print the_title();
             ?>
        </div>
     </div>
 </div>
 
 <div class="container">
-<?php the_checklist(); ?>
+<?php 
+    
+    // Printing the message
+    print the_message();
+    
+    // Running the checklist loop
+    print the_checklist($topics); 
+
+?>
         </div>
         <div>
             <br/><br/><br/>
